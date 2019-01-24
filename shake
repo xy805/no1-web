@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>防抖</title>
+	<style type="text/css">
+		.value{
+			height: 20px;
+			width: 20px;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+
+<input type="submit" name="" class="value2"  >
+
+	<div class="value1">
+		1
+	</div>
+
+
+<script type="text/javascript">
+	// var key=true;
+	var value2 = document.getElementsByClassName('value2')[0];
+	var ODiv=document.getElementsByClassName('value1')[0];
+	
+	var times=function(fun,tim){
+         var lastTime=0;
+        
+        
+         return function(e){
+         	console.log(arguments,'1111');
+         	var nowTime=new Date().getTime();
+         	if(nowTime-lastTime>tim){
+         		// console.log(arg[1],'times.arguments');
+         		fun.call(this,222,444);
+         		lastTime=nowTime;
+         		}
+
+         	}
+         }
+
+         function buy(e,lime){
+            
+         	console.log(lime,'lime');
+         	ODiv.innerText=parseInt(ODiv.innerText)+1;
+
+         }
+	value2.onclick = times(buy,1000);
+
+   //   var lastTime=0;
+
+   // value2.onclick =  function(){
+         
+        
+        
+   //       // return function(e){
+   //       	var nowTime=new Date().getTime();
+   //       	if(nowTime-lastTime>1000){
+   //       		// console.log(arg[1],'times.arguments');
+   //       		ODiv.innerText=parseInt(ODiv.innerText)+1;
+   //       		console.log()
+   //       		lastTime=nowTime;
+   //       		}
+
+   //       	}
+        
+
+   //       function buy(e,lime){
+            
+   //       	console.log(this,"this",e,"e",lime,'运行');
+   //       	ODiv.innerText=parseInt(ODiv.innerText)+1;
+   //       }
+
+	
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
